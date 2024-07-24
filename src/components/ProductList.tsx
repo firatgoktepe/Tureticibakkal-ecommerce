@@ -7,51 +7,98 @@ import Pagination from "./Pagination";
 
 const PRODUCT_PER_PAGE = 3;
 
+interface ProductListProps {
+  categoryId: string;
+  limit?: number;
+  searchParams?: {
+    name?: string;
+    type?: string;
+    min?: number;
+    max?: number;
+    page?: string;
+    sort?: string;
+    cat?: string;
+  };
+}
+
+const allowedSortFields = [
+  "name",
+  "price",
+  "sku",
+  "slug",
+  "_id",
+  "productType",
+  "priceData.price",
+  "numericId",
+  "lastUpdated",
+] as const;
+type SortField = (typeof allowedSortFields)[number];
+
 const ProductList = async ({
   categoryId,
   limit,
   searchParams,
-}: {
-  categoryId: string;
-  limit?: number;
-  searchParams?: any;
-}) => {
+}: ProductListProps) => {
   const wixClient = await wixClientServer();
 
-  const productQuery = wixClient.products
-    .queryProducts()
-    .startsWith("name", searchParams?.name || "")
-    .eq("collectionIds", categoryId)
-    .hasSome(
-      "productType",
-      searchParams?.type ? [searchParams.type] : ["physical", "digital"]
-    )
-    .gt("priceData.price", searchParams?.min || 0)
-    .lt("priceData.price", searchParams?.max || 999999)
-    .limit(limit || PRODUCT_PER_PAGE)
-    .skip(
-      searchParams?.page
-        ? parseInt(searchParams.page) * (limit || PRODUCT_PER_PAGE)
-        : 0
-    );
-  // .find();
+  let res;
 
-  if (searchParams?.sort) {
-    const [sortType, sortBy] = searchParams.sort.split(" ");
+  const productQuery = wixClient.products.queryProducts();
 
-    if (sortType === "asc") {
-      productQuery.ascending(sortBy);
-    }
-    if (sortType === "desc") {
-      productQuery.descending(sortBy);
-    }
+  if (searchParams?.name) {
+    productQuery.startsWith("name", searchParams.name);
   }
 
-  const res = await productQuery.find();
+  if (categoryId) {
+    productQuery.eq("collectionIds", categoryId);
+  }
+
+  if (searchParams?.type) {
+    productQuery.hasSome("productType", [searchParams.type]);
+  } else {
+    productQuery.hasSome("productType", ["physical", "digital"]);
+  }
+
+  if (typeof searchParams?.min === "number") {
+    productQuery.gt("priceData.price", searchParams.min);
+  } else {
+    productQuery.gt("priceData.price", 0);
+  }
+
+  if (typeof searchParams?.max === "number") {
+    productQuery.lt("priceData.price", searchParams.max);
+  } else {
+    productQuery.lt("priceData.price", 999999);
+  }
+
+  productQuery.limit(limit || PRODUCT_PER_PAGE);
+
+  if (searchParams?.page) {
+    productQuery.skip(
+      parseInt(searchParams.page) * (limit || PRODUCT_PER_PAGE)
+    );
+  } else {
+    productQuery.skip(0);
+  }
+
+  if (searchParams?.sort && !searchParams.sort.includes("default")) {
+    const [sortType, sortBy] = searchParams.sort.split(" ");
+    if (allowedSortFields.includes(sortBy as SortField)) {
+      if (sortType === "asc") {
+        res = await productQuery.ascending(sortBy as SortField).find();
+      } else if (sortType === "desc") {
+        res = await productQuery.descending(sortBy as SortField).find();
+      }
+    } else {
+      throw new Error(`Invalid sort field: ${sortBy}`);
+    }
+  } else {
+    res = await productQuery.find();
+  }
 
   return (
     <div className="mt-12 flex gap-x-8 gap-y-16 justify-between flex-wrap">
-      {res.items.map((product: products.Product) => (
+      {res?.items.map((product: products.Product) => (
         <Link
           href={"/" + product.slug}
           className="w-full flex flex-col gap-4 sm:w-[45%] lg:w-[22%]"
@@ -65,7 +112,7 @@ const ProductList = async ({
               sizes="25vw"
               className="absolute object-cover rounded-md z-10 hover:opacity-0 transition-opacity easy duration-500"
             />
-            {product.media?.items && (
+            {product.media?.items && product.media.items.length > 1 && (
               <Image
                 src={product.media?.items[1]?.image?.url || "/product.png"}
                 alt=""
@@ -77,7 +124,7 @@ const ProductList = async ({
           </div>
           <div className="flex justify-between">
             <span className="font-medium">{product.name}</span>
-            <span className="font-semibold">${product.price?.price}</span>
+            <span className="font-semibold">₺{product.price?.price}</span>
           </div>
           {product.additionalInfoSections && (
             <div
@@ -96,13 +143,13 @@ const ProductList = async ({
           </button>
         </Link>
       ))}
-      {searchParams?.cat || searchParams?.name ? (
+      {(searchParams?.cat || searchParams?.name) && (
         <Pagination
-          currentPage={res.currentPage || 0}
-          hasPrev={res.hasPrev()}
-          hasNext={res.hasNext()}
+          currentPage={res?.currentPage || 0}
+          hasPrev={res?.hasPrev() || false}
+          hasNext={res?.hasNext() || false}
         />
-      ) : null}
+      )}
     </div>
   );
 };
