@@ -8,7 +8,7 @@ const CategoryList = async () => {
   const cats = await wixClient.collections.queryCollections().find();
 
   return (
-    <div className="px-4 overflow-x-scroll scrollbar-hide">
+    <div className="px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64 overflow-x-scroll scrollbar-hide">
       <div className="flex gap-4 md:gap-8">
         {cats.items.map((item) => (
           <Link
