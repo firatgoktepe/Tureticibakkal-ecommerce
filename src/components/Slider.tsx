@@ -7,25 +7,25 @@ import { useEffect, useState } from "react";
 const slides = [
   {
     id: 1,
-    title: "Summer Sale Collections",
-    description: "Sale! Up to 50% off!",
-    img: "https://images.pexels.com/photos/1926769/pexels-photo-1926769.jpeg?auto=compress&cs=tinysrgb&w=800",
+    title: "DOĞAL VE SAĞLIKLI ÜRÜNLER",
+    description: "HİÇBİR AŞAMASINDA KİMYASAL SÜREÇLERE MARUZ KALMAYAN ÜRÜNLER",
+    img: "https://images.pexels.com/photos/6272310/pexels-photo-6272310.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     url: "/",
     bg: "bg-gradient-to-r from-yellow-50 to-pink-50",
   },
   {
     id: 2,
-    title: "Winter Sale Collections",
-    description: "Sale! Up to 50% off!",
-    img: "https://images.pexels.com/photos/1021693/pexels-photo-1021693.jpeg?auto=compress&cs=tinysrgb&w=800",
+    title: "ZEHİRSİZ SOFRALAR İÇİN TÜRETİCİ YAŞAM",
+    description: "DİREK ÜRETİCİDEN VE DAYANIŞMA TEMELLİ",
+    img: "https://images.pexels.com/photos/7771982/pexels-photo-7771982.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     url: "/",
     bg: "bg-gradient-to-r from-pink-50 to-blue-50",
   },
   {
     id: 3,
-    title: "Spring Sale Collections",
-    description: "Sale! Up to 50% off!",
-    img: "https://images.pexels.com/photos/1183266/pexels-photo-1183266.jpeg?auto=compress&cs=tinysrgb&w=800",
+    title: "KARGO BEDAVA",
+    description: "2000 TL ve üzeri siparişlerinizde kargo ÜCRETSİZ",
+    img: "https://images.pexels.com/photos/7771995/pexels-photo-7771995.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     url: "/",
     bg: "bg-gradient-to-r from-blue-50 to-yellow-50",
   },
@@ -34,13 +34,13 @@ const slides = [
 const Slider = () => {
   const [current, setCurrent] = useState(0);
 
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     setCurrent((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
-  //   }, 3000);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
+    }, 3000);
 
-  //   return () => clearInterval(interval);
-  // }, []);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="h-[calc(100vh-80px)] overflow-hidden">
