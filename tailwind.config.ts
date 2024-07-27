@@ -15,6 +15,9 @@ const config: Config = {
       },
       colors: {
         lama: "#F35C7A",
+        primaryColor: "#0b8a1c",
+        secondaryColor: "#fcb900",
+        tertiaryColor: "#ff6900",
       },
     },
   },
