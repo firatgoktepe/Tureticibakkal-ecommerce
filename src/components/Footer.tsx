@@ -9,14 +9,14 @@ const Footer = () => {
         {/* LEFT */}
         <div className="w-full md:w-1/2 lg:w-1/4 flex flex-col gap-8">
           <Link href="/">
-            <div className="text-2xl tracking-wide">Turetici Bakkal</div>
+            <div className="text-2xl tracking-wide">Türetici Bakkal</div>
           </Link>
           <p>
-            3252 Winding Way, Central Plaza, Willowbrook, CA 90210, United
-            States
+            100. Yıl Mah. Reşit Galip Cad. Dolunay Sok. No: 5/A Çankaya/Ankara
+            Türkiye
           </p>
           <span className="font-semibold">tureticibakkalstore@gmail.com</span>
-          <span className="font-semibold">+1 234 567 890</span>
+          <span className="font-semibold">0501 036 62 44</span>
           <div className="flex gap-6">
             <Image src="/facebook.png" alt="" width={16} height={16} />
             <Image src="/instagram.png" alt="" width={16} height={16} />
@@ -28,47 +28,44 @@ const Footer = () => {
         {/* CENTER */}
         <div className="hidden lg:flex justify-between w-1/2">
           <div className="flex flex-col justify-between">
-            <h1 className="font-medium text-lg">COMPANY</h1>
+            <h1 className="font-medium text-lg">Türetici Bakkal</h1>
             <div className="flex flex-col gap-6">
-              <Link href="">About Us</Link>
-              <Link href="">Careers</Link>
-              <Link href="">Affiliates</Link>
-              <Link href="">Blog</Link>
-              <Link href="">Contact Us</Link>
+              <Link href="">Hakkımızda</Link>
+              <Link href="">Türetici Bloğu</Link>
+              <Link href="">Üretici Ağımız</Link>
+              <Link href="">Ürün Sertifikalarımız</Link>
+              <Link href="">İletişim</Link>
             </div>
           </div>
           <div className="flex flex-col justify-between">
-            <h1 className="font-medium text-lg">SHOP</h1>
+            <h1 className="font-medium text-lg">Ürünler</h1>
             <div className="flex flex-col gap-6">
-              <Link href="">New Arrivals</Link>
-              <Link href="">Accessories</Link>
-              <Link href="">Men</Link>
-              <Link href="">Women</Link>
-              <Link href="">All Products</Link>
+              <Link href="">Yeni Gelenler</Link>
+              <Link href="">Kategoriler</Link>
+              <Link href="">Tüm Ürünler</Link>
             </div>
           </div>
           <div className="flex flex-col justify-between">
-            <h1 className="font-medium text-lg">HELP</h1>
+            <h1 className="font-medium text-lg">Yardım</h1>
             <div className="flex flex-col gap-6">
-              <Link href="">Customer Service</Link>
-              <Link href="">My Account</Link>
-              <Link href="">Find a Store</Link>
-              <Link href="">Legal & Privacy</Link>
-              <Link href="">Gift Card</Link>
+              <Link href="">İptal ve İade Şartları</Link>
+              <Link href="">Kişisel Verilerin Korunması</Link>
+              <Link href="">Mesafeli Satış Sözleşmesi</Link>
+              <Link href="">Gizlilik ve Güvenlik Politikası</Link>
+              <Link href="">Banka Hesap Bilgilerimiz</Link>
             </div>
           </div>
         </div>
         {/* RIGHT */}
         <div className="w-full md:w-1/2 lg:w-1/4 flex flex-col gap-8">
-          <h1 className="font-medium text-lg">SUBSCRIBE</h1>
+          <h1 className="font-medium text-lg">Abone Ol</h1>
           <p>
-            Be the first to get the latest news about trends, promotions, and
-            much more!
+            Trendler, promosyonlar ve ilgili en son haberleri ilk alan siz olun!
           </p>
           <div className="flex">
             <input
               type="text"
-              placeholder="Email address"
+              placeholder="E-posta Adresiniz"
               className="p-4 w-3/4"
             />
             <button className="w-1/4 bg-lama text-white">JOIN</button>
@@ -88,11 +85,11 @@ const Footer = () => {
         <div className="">© 2024 Turetici Bakkal Shop</div>
         <div className="flex flex-col gap-8 md:flex-row">
           <div className="">
-            <span className="text-gray-500 mr-4">Language</span>
-            <span className="font-medium">Turkiye | Turkish</span>
+            <span className="text-gray-500 mr-4">Dil</span>
+            <span className="font-medium">Türkiye | Turkish</span>
           </div>
           <div className="">
-            <span className="text-gray-500 mr-4">Currency</span>
+            <span className="text-gray-500 mr-4">Para Birimi</span>
             <span className="font-medium">₺ TL</span>
           </div>
         </div>
