@@ -12,8 +12,11 @@ const Navbar = () => {
     <div className="h-20 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64 relative">
       {/* MOBILE */}
       <div className="h-full flex items-center justify-between md:hidden">
-        <Link href="/">
-          <div className="text-2xl tracking-wide">Turetici Bakkal</div>
+        <Link href="/" className="flex items-center">
+          <Image src="/logo.png" alt="" width={64} height={64} />
+          <div className="text-2xl tracking-wide text-primaryColor">
+            Turetici Bakkal
+          </div>
         </Link>
         <Menu />
       </div>
@@ -23,18 +26,19 @@ const Navbar = () => {
         <div className="w-1/3 xl:w-1/2 flex items-center gap-12">
           <Link href="/" className="flex items-center gap-3">
             <Image src="/logo.png" alt="" width={64} height={64} />
-            <div className="text-2xl tracking-wide">Turetici Bakkal</div>
+            <div className="text-2xl tracking-wide text-primaryColor">
+              Turetici Bakkal
+            </div>
           </Link>
-          <div className="hidden xl:flex gap-4">
-            <Link href="/">Homepage</Link>
-            <Link href="/">Shop</Link>
-            <Link href="/">Deals</Link>
-            <Link href="/">About</Link>
-            <Link href="/">Contact</Link>
+          <div className="hidden xl:flex gap-4 text-primaryColor">
+            <Link href="/">Anasayfa</Link>
+            <Link href="/list?cat=all-products">Ürünlerimiz</Link>
+            <Link href="/">Hakkımızda</Link>
+            <Link href="/">İletişim</Link>
           </div>
         </div>
         {/* RIGHT */}
-        <div className="w-2/3 xl:w-1/2 flex items-center justify-between gap-8">
+        <div className="w-2/3 xl:w-1/3 flex items-center justify-between gap-8">
           <SearchBar />
           <NavIcons />
         </div>
