@@ -8,7 +8,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 <img width="951" alt="Screenshot 2022-03-20 at 19 08 06" src="https://github.com/user-attachments/assets/a6a043a6-4856-404e-849f-35223ed1695d">
 
-https://app.screencastify.com/v3/watch/ZkCpX4roJixjAnbulSBT
+#### Screen video: https://app.screencastify.com/v3/watch/ZkCpX4roJixjAnbulSBT
 
 - Product Details
 
