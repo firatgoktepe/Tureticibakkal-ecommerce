@@ -14,11 +14,11 @@ https://app.screencastify.com/v3/watch/ZkCpX4roJixjAnbulSBT
 
 <img width="951" alt="Screenshot 2022-03-20 at 19 08 06" src="https://github.com/user-attachments/assets/8aa192ed-986a-438e-90bb-5962a8a7a2a9">
 
-https://app.screencastify.com/v3/watch/KpkiX8DsAbscsV40KYIP
+#### Screen video: https://app.screencastify.com/v3/watch/KpkiX8DsAbscsV40KYIP
 
 - Headless CMS settings
 
-https://app.screencastify.com/v3/watch/FHnzZBZuyBkrdw0k6R49
+#### Screen video: https://app.screencastify.com/v3/watch/FHnzZBZuyBkrdw0k6R49
 
 ## Getting Started
 
