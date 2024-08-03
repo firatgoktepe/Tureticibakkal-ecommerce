@@ -16,7 +16,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 #### Screen video: https://app.screencastify.com/v3/watch/KpkiX8DsAbscsV40KYIP
 
-- Headless CMS settings
+- ### Headless CMS settings
 
 #### Screen video: https://app.screencastify.com/v3/watch/FHnzZBZuyBkrdw0k6R49
 
