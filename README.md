@@ -2,7 +2,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ### Screenshots
 
-- Home
+- ### Home page
 
 <img width="951" alt="Screenshot 2022-03-20 at 19 08 06" src="https://github.com/user-attachments/assets/4ac999d9-887d-42ee-af3f-9b24e9ea6285">
 
@@ -10,7 +10,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 #### Screen video: https://app.screencastify.com/v3/watch/ZkCpX4roJixjAnbulSBT
 
-- Product Details
+- ### Product Details
 
 <img width="951" alt="Screenshot 2022-03-20 at 19 08 06" src="https://github.com/user-attachments/assets/8aa192ed-986a-438e-90bb-5962a8a7a2a9">
 
