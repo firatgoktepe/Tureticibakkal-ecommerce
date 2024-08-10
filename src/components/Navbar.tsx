@@ -33,7 +33,7 @@ const Navbar = () => {
           <div className="hidden xl:flex gap-4 text-primaryColor">
             <Link href="/">Anasayfa</Link>
             <Link href="/list?cat=all-products">Ürünlerimiz</Link>
-            <Link href="/">Hakkımızda</Link>
+            <Link href="/about-us">Hakkımızda</Link>
             <Link href="/">İletişim</Link>
           </div>
         </div>
